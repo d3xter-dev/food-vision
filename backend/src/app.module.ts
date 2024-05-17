@@ -6,6 +6,8 @@ import { OpenaiService } from './services/openai/openai.service';
 import authConfig from './config/auth.config';
 import openaiConfig from './config/openai.config';
 import { CacheModule } from '@nestjs/cache-manager';
+import { APP_GUARD } from '@nestjs/core';
+import { AuthGuard } from './guards/auth.guard';
 
 @Module({
   imports: [
@@ -15,6 +17,13 @@ import { CacheModule } from '@nestjs/cache-manager';
     CacheModule.register(),
   ],
   controllers: [AppController],
-  providers: [ImageService, OpenaiService],
+  providers: [
+    ImageService,
+    OpenaiService,
+    {
+      provide: APP_GUARD,
+      useClass: AuthGuard,
+    },
+  ],
 })
 export class AppModule {}
