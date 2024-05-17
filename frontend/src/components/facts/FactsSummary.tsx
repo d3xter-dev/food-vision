@@ -6,7 +6,6 @@ import { Typography } from '@material-tailwind/react'
 export function FactsSummary({ items, loading }: { items: AnalyzeResultItemDto[]; loading?: boolean }) {
     const TotalStats = useMemo(() => {
         return {
-            name: 'Total',
             cal: items.reduce((acc, item) => acc + item.cal, 0),
             carbs: items.reduce((acc, item) => acc + item.carbs, 0),
             fat: items.reduce((acc, item) => acc + item.fat, 0),
