@@ -1,0 +1,9 @@
+:80, :443 {
+	encode zstd gzip
+
+	handle_path /* {
+		root * /usr/share/caddy
+		try_files {path} /index.html
+		file_server
+	}
+}

@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+  frontend:
+    build:
+      context: ./frontend
+    environment:
+      - VITE_API_URL=http://localhost:3000/
+      - VITE_API_KEY=abc
+    ports:
+      - "80:80"
+      - "443:443"
+  backend:
+    build:
+      context: ./backend
+    environment:
+      - OPENAI_KEY=${OPENAI_KEY}
+      - API_KEY=abc
+    ports:
+      - "3000:3000"
