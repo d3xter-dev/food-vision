@@ -36,9 +36,7 @@ export default function ImageUpload(props: ImageUploadProps) {
                 {...getRootProps()}
                 className={`rounded-lg border bg-gray-300 flex flex-col items-center justify-center relative cursor-pointer group ${props.className}`}
             >
-                {preview && (
-                    <img alt={'Preview'} src={preview as string} className={'h-full w-full object-cover rounded-lg'} />
-                )}
+                {preview && <img alt={'Preview'} src={preview} className={'h-full w-full object-cover rounded-lg'} />}
 
                 <div
                     className={`${preview ? 'opacity-0' : 'opacity-100'} group-hover:opacity-100 transition-opacity absolute bg-gray-50/40 h-full w-full flex justify-center items-center rounded-lg px-6 text-center`}
