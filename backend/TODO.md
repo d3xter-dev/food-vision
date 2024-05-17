@@ -1,3 +1,0 @@
-- Image compression to save tokens
-- Cache responses? No need to generate the same response twice
--> need to generate a hash for uploaded images
