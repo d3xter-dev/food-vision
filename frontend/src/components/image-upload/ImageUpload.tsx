@@ -6,7 +6,7 @@ type ImageUploadProps = {
 } & React.ComponentProps<'div'>
 
 export default function ImageUpload(props: ImageUploadProps) {
-    const [preview, setPreview] = useState<string | null>(null)
+    const [preview, setPreview] = useState<string | undefined>()
 
     const onDrop = useCallback((acceptedFiles: File[]) => {
         const reader = new FileReader()
