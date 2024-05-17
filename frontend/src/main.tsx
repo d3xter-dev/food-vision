@@ -6,7 +6,7 @@ import { ThemeProvider } from '@material-tailwind/react'
 import axios from 'axios'
 
 axios.defaults.baseURL = import.meta.env.VITE_API_URL
-axios.defaults.headers.common['Authorization'] = import.meta.env.VITE_API_KEY
+axios.defaults.headers.common['api_key'] = import.meta.env.VITE_API_KEY
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
